@@ -1,0 +1,172 @@
+/* Trackman article screenshot styling
+   Apply this stylesheet to a page that renders article.body as HTML.
+*/
+
+:root {
+  --tm-bg: #171717;
+  --tm-text: #ffffff;
+  --tm-heading: #ec691a;
+  --tm-muted: #d6d6d6;
+  --tm-link: #ec691a;
+  --tm-content-width: 760px;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--tm-bg);
+  color: var(--tm-text);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+body {
+  padding: 10px 12px 28px;
+}
+
+.article-content {
+  width: 100%;
+  max-width: var(--tm-content-width);
+  box-sizing: border-box;
+}
+
+.article-content h1,
+.article-content h2,
+.article-content h3,
+.article-content h4,
+.article-content h5,
+.article-content h6 {
+  margin: 0 0 14px;
+  color: var(--tm-heading);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.article-content h1 {
+  font-size: 28px;
+}
+
+.article-content h2 {
+  margin-top: 30px;
+  font-size: 22px;
+}
+
+.article-content h3 {
+  margin-top: 28px;
+  font-size: 20px;
+}
+
+.article-content h4 {
+  margin-top: 24px;
+  font-size: 18px;
+}
+
+.article-content p {
+  margin: 0 0 16px;
+}
+
+.article-content ul,
+.article-content ol {
+  margin: 0 0 18px 24px;
+  padding: 0;
+}
+
+.article-content ul ul,
+.article-content ul ol,
+.article-content ol ul,
+.article-content ol ol {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.article-content li {
+  margin: 3px 0;
+  padding-left: 2px;
+}
+
+.article-content li::marker {
+  color: var(--tm-text);
+}
+
+.article-content strong,
+.article-content b {
+  font-weight: 700;
+}
+
+.article-content a {
+  color: var(--tm-link);
+  text-decoration: underline;
+}
+
+.article-content img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 14px 0 20px;
+}
+
+.article-content iframe,
+.article-content video {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin: 14px 0 20px;
+  border: 0;
+}
+
+.article-content blockquote {
+  margin: 16px 0;
+  padding: 10px 14px;
+  border-left: 4px solid var(--tm-heading);
+  color: var(--tm-muted);
+}
+
+.article-content code,
+.article-content pre {
+  font-family: Consolas, Monaco, monospace;
+}
+
+.article-content pre {
+  overflow-x: auto;
+  padding: 12px;
+  background: #0f0f0f;
+  border: 1px solid #333333;
+  border-radius: 4px;
+}
+
+.article-content table {
+  width: 100%;
+  margin: 16px 0;
+  border-collapse: collapse;
+}
+
+.article-content th,
+.article-content td {
+  padding: 8px 10px;
+  border: 1px solid #444444;
+  text-align: left;
+}
+
+.article-content th {
+  color: var(--tm-heading);
+}
+
+/* Removes Zendesk editor-only attributes from affecting layout */
+.article-content [data-list-item-id],
+.article-content [data-fancybox],
+.article-content [data-fancybox-href] {
+  box-sizing: border-box;
+}
+
+/* Screenshot-friendly print rendering */
+@media print {
+  html,
+  body {
+    background: var(--tm-bg) !important;
+    color: var(--tm-text) !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
