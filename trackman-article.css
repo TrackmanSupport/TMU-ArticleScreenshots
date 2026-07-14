@@ -26,7 +26,7 @@ body {
   padding: 10px 12px 28px;
 }
 
-[data-fancybox] {
+.article-content [data-fancybox] {
     display: none !important;
 }
 
