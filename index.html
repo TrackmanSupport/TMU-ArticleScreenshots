@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trackman Article</title>
+
+  <link rel="stylesheet" href="trackman-article.css">
+</head>
+
+<body>
+  <main id="article" class="article-content">
+    Loading article…
+  </main>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const articleId = params.get("id");
+
+    if (!articleId) {
+      document.getElementById("article").textContent =
+        "No article ID was provided.";
+    } else {
+      const apiUrl =
+        `https://support.trackmangolf.com/api/v2/help_center/en-us/articles/${articleId}.json`;
+
+      fetch(apiUrl)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`Zendesk returned ${response.status}`);
+          }
+
+          return response.json();
+        })
+        .then(data => {
+          document.title = data.article.title;
+          document.getElementById("article").innerHTML =
+            data.article.body;
+        })
+        .catch(error => {
+          document.getElementById("article").textContent =
+            `Unable to load article: ${error.message}`;
+        });
+    }
+  </script>
+</body>
+</html>
