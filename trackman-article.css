@@ -103,7 +103,7 @@ body {
 .article-content a {
   color: var(--tm-link);
   text-decoration: underline;
-  display: none !important;
+  display: none;
 }
 
 .article-content img {
