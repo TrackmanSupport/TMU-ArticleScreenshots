@@ -26,10 +26,6 @@ body {
   padding: 10px 12px 28px;
 }
 
-.article-content a {
-    display: none !important;
-}
-
 .article-content {
   width: 100%;
   max-width: var(--tm-content-width);
@@ -107,6 +103,7 @@ body {
 .article-content a {
   color: var(--tm-link);
   text-decoration: underline;
+  display: none !important;
 }
 
 .article-content img {
